@@ -24,5 +24,5 @@ for dir_path, dir_names, file_names in os.walk(dir):
             
             # TODO this currently makes assumption all temperatures are above 0 degrees C
             celsius = imarray - 2722 # Convert image data from Kelven to Celcius 
-            c_im = Image.fromarray(celsius.astype(np.uint16) * 256) # Expand data to fill uint16
+            c_im = Image.fromarray(celsius.astype(np.uint16) * 128) # Expand data to fill uint16
             c_im.save(os.path.join(dir_path, file)[:-4] + 'tif', exif=jpg_img._getexif()) # Save modified tiff with jpg's exif
