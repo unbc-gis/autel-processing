@@ -1,5 +1,12 @@
 # Directory to search for images
 dir = 'Change me'
+
+from PIL import Image
+import piexif
+import numpy as np
+import os
+
+
 for dir_path, dir_names, file_names in os.walk(dir):
     print(dir_path)
     for file in file_names:
